@@ -1,6 +1,12 @@
-var path = require("path");
+//import data of friends here
+var friends = require("../data/friends");
 module.exports = function (app){
-    app.get("",function(){
-        
+    //get matched friend data 
+    app.get("/api/friends",function(req,res){
+
+    });
+    //add new data to friends
+    app.post("/api/friends",function(req,res){
+
     });
 }
