@@ -1,0 +1,26 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "friend finder node express",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nova-Xue/FriendFinder.git"
+  },
+  "keywords": [
+    "friend",
+    "finder",
+    "node",
+    "express"
+  ],
+  "author": "Nova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nova-Xue/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/Nova-Xue/FriendFinder#readme"
+}
