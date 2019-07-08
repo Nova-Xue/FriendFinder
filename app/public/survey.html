@@ -1,11 +1,135 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery.js"></script>
     <title>Document</title>
 </head>
+
 <body>
-    survey
+    <h1>Questions</h1>
+    <form>
+        <div class="info">
+            <label for="name">name : </label>
+            <input type="text" class="survey" id="name">
+            <label for="photo">photo : </label>
+            <input type="text" class="survey" id= "photo">
+        </div>
+        <div class="questions">
+                <div>
+                    <h2>Some question 1</h2>
+                    <select name="q1" id="q1" class="survey">
+                        <optgroup>
+                            <option name="" value="">Select an otpion</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <h2>Some question 2</h2>
+                    <select name="q2" id="q2" class="survey">
+                        <optgroup>
+                            <option name="" value="">Select an otpion</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <h2>Some question 3</h2>
+                    <select name="q3" id="q3" class="survey">
+                        <optgroup>
+                            <option name="" value="">Select an otpion</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <h2>Some question 4</h2>
+                    <select name="q4" id="q4" class="survey">
+                        <optgroup>
+                            <option name="" value="">Select an otpion</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </optgroup>
+        
+                    </select>
+                </div>
+                <div>
+                    <h2>Some question 5</h2>
+                    <select name="q5" id="q5" class="survey">
+                        <optgroup>
+                            <option name="" value="">Select an otpion</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+           
+        <input type="submit" value="submit" id="submit">
+    </form>
+    
+
+    <script type="text/javascript">
+        $("#submit").on("click",function(e){
+            e.preventDefault();
+            //validation
+            var check = true;
+            $(".survey").each(function(){
+                if(check){
+                    check = !($(this).val()=="");
+                }
+                console.log($(this).val());
+                
+            });;
+            if(check){
+                //get input 
+                var newFriend = {
+                    name : $("#name").val(),
+                    photo : $("#photo").val(),
+                    scores : [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val()
+                    ]
+                };
+                console.log(newFriend);
+                //ajax
+                //add new friends to list 
+                //get resp
+                $.post("/api/friends",newFriend,function(data){
+                    console.log(data);
+                    
+                });
+            }else{
+                alert("Please fiil all the fields");
+            }
+            
+
+        });
+    </script>
 </body>
+
 </html>

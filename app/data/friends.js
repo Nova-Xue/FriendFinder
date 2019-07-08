@@ -1,10 +1,14 @@
 var friends = [
     {
-    name : "",
-    d1 : "",
-    d2 : "",
-    d3 : "",
-    d4 : ""
+    name : "someone1",
+    photo : "",
+    scores : [
+        1,
+        2,
+        4,
+        5,
+        3
+    ]
 
     },
     {
