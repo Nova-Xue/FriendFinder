@@ -13,8 +13,8 @@ module.exports = function (app){
         
         //find and give back a match
         var newFriend = req.body.scores;
-        var minDiff = 80;
-        var friendIndex;
+        var minDiff = 81;//5*  (5-1)^2  +1
+        var friendIndex = -1;
         for (let index = 0; index < friends.length; index++) {
            var temp = friends[index].scores;
            var diff = 0 ;

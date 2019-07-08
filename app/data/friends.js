@@ -1,7 +1,7 @@
 module.exports = [
     {
     name : "someone1",
-    photo : "",
+    photo : "https://cdn.pixabay.com/photo/2014/03/04/22/55/silhouette-279810_960_720.png",
     scores : [
         2,
         2,
@@ -11,13 +11,13 @@ module.exports = [
     ]
     },{
         name : "someone2",
-        photo : "",
+        photo : "https://cdn.clipart.email/4211ee3f5cfa5e80114737509da1a9d1_business-man-standing-silhouette-in-black-and-white-free-images-_362-600.png",
         scores : [
-            2,
-            1,
+            5,
             3,
-            4,
-            5
+            1,
+            2,
+            4
         ]
     }
 

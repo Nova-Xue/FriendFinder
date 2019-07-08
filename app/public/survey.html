@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery.js"></script>
-    <title>Document</title>
+    <title>Survey</title>
 </head>
 
 <body>
@@ -13,9 +13,9 @@
     <form>
         <div class="info">
             <label for="name">name : </label>
-            <input type="text" class="survey" id="name">
+            <input type="text" class="survey" id="name" placeholder="required">
             <label for="photo">photo : </label>
-            <input type="text" class="survey" id= "photo">
+            <input type="text" class="survey" id= "photo" placeholder="required">
         </div>
         <div class="questions">
                 <div>
@@ -88,7 +88,13 @@
            
         <input type="submit" value="submit" id="submit">
     </form>
-    
+    <a href="/">Home</a>
+    <a href="api/friends">Api friends</a>
+    <div id="friend" style="display: none">
+        <h1>Your matched friend</h1>
+        <h2 id="friend-name"></h2>
+        <img id="friend-image" alt="friend-image">
+    </div>
 
     <script type="text/javascript">
         $("#submit").on("click",function(e){
@@ -115,19 +121,24 @@
                         $("#q5").val()
                     ]
                 };
-                console.log(newFriend);
+                //console.log(newFriend);
                 //ajax
                 //add new friends to list 
                 //get resp
                 $.post("/api/friends",newFriend,function(data){
+                    $("#friend-name").text(data.name);
                     console.log(data);
                     
+                    $("#friend-image").attr("src",data.photo);
+                    $("#friend").show();
                 });
             }else{
                 alert("Please fiil all the fields");
             }
-            
-
+            $("#name").val("");
+            $("#photo").val("");
+            $("select").val("");
+           
         });
     </script>
 </body>
